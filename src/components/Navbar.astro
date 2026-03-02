@@ -1,0 +1,48 @@
+---
+const links = [
+  { href: "#welcome-section", label: "About" },
+  { href: "#projects-section", label: "Projects" },
+  { href: "#contact-section", label: "Contact" },
+];
+---
+
+<header
+  class="fixed top-0 left-0 right-0 h-[50px] z-999 border-b-2 border-(--dark)"
+  style="background: linear-gradient(var(--violet), var(--pink) 95%)"
+>
+  <nav
+    class="flex justify-end items-center h-full"
+    style="padding-right: clamp(3rem, 10vw, 8rem); padding-left: 2rem"
+  >
+    <ul class="flex gap-[clamp(1rem,3vw,2rem)]">
+      {
+        links.map((l) => (
+          <li>
+            <a
+              href={l.href}
+              class="nav-link font-hotline text-(--gold)"
+              style="font-size: clamp(1.2rem, 2.5vw, 2rem)"
+            >
+              {l.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</header>
+
+<style>
+  .nav-link {
+    text-shadow: 3px 3px 5px var(--dark);
+    transition:
+      color 0.2s ease,
+      text-shadow 0.2s ease;
+  }
+  .nav-link:hover {
+    color: var(--pink);
+    text-shadow:
+      3px 3px var(--azure),
+      0 0 3px var(--azure);
+  }
+</style>

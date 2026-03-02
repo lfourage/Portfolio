@@ -1,0 +1,138 @@
+---
+import Building from "./Building.astro";
+
+const groups = [
+  { type: "a", side: "left" },
+  { type: "b", side: "left" },
+  { type: "c", side: "left" },
+  { type: "a", side: "right" },
+  { type: "b", side: "right" },
+];
+---
+
+<section id="welcome-section">
+  <div id="buildings">
+    {groups.map((g) => <Building type={g.type} side={g.side} />)}
+  </div>
+  <div id="water">
+    <div class="water-filter"></div>
+    <div id="buildings-reflection">
+      {groups.map((g) => <Building type={g.type} side={g.side} />)}
+    </div>
+  </div>
+  <h1 id="welcome-text">
+    <strong>Welcome</strong>I am lfourage, web developer
+  </h1>
+</section>
+
+<style>
+  #welcome-section {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+    overflow: hidden;
+    background: radial-gradient(
+      circle at 50% 45%,
+      var(--pink),
+      var(--gold) 20%,
+      var(--pink) 21%,
+      var(--violet) 30%,
+      var(--violet-darker),
+      var(--dark) 90%
+    );
+  }
+
+  #buildings,
+  #water {
+    position: absolute;
+    width: 100%;
+  }
+
+  #buildings {
+    height: 40%;
+    top: 30%;
+    display: flex;
+    justify-content: space-around;
+    z-index: 0;
+  }
+
+  #water {
+    top: 70%;
+    height: 30%;
+    background: radial-gradient(
+      circle at 50%,
+      var(--gold-alpha),
+      var(--pink-alpha),
+      var(--dark-alpha)
+    );
+    transform: scaleY(-1);
+    display: flex;
+    align-items: flex-end;
+    z-index: 1;
+  }
+
+  .water-filter {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      circle at 50%,
+      var(--gold-alpha),
+      var(--pink-alpha),
+      var(--dark-alpha)
+    );
+    z-index: 2;
+  }
+
+  #buildings-reflection {
+    position: absolute;
+    height: 80%;
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    animation: water 10s linear infinite;
+  }
+
+  #welcome-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10vw;
+    animation: welcome 5s ease-in-out infinite;
+    font-size: clamp(2rem, 7vw, 8rem);
+    text-shadow:
+      8px 8px var(--dark),
+      0px 8px var(--dark),
+      11px 0px var(--dark),
+      -1px -1px var(--dark);
+    z-index: 2;
+  }
+
+  #welcome-text strong {
+    font-size: clamp(3rem, 10vw, 11rem);
+    color: var(--pink);
+    display: block;
+  }
+
+  /* Responsive — hide building groups progressively */
+  @media (max-width: 1200px) {
+    #welcome-section {
+      height: 70vh;
+    }
+  }
+
+  @media (max-width: 900px) {
+    #welcome-section {
+      height: 60vh;
+    }
+  }
+
+  @media (max-width: 750px) {
+    #welcome-section {
+      height: 50vh;
+    }
+  }
+</style>

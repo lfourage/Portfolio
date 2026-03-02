@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Technical Documentation Page",
+    "description": "A FreeCodeCamp certification project, the goal was to build a documentation page for a subject of choice, with a side navbar.",
+    "image": "/images/Docpage.png",
+    "liveUrl": "https://lfourage.github.io/fcc-technicaldocumentationpage/",
+    "githubUrl": "https://github.com/lfourage/fcc-technicaldocumentationpage",
+    "tags": ["HTML", "CSS"]
+  },
+  {
+    "id": 2,
+    "name": "Tribute Page",
+    "description": "A FreeCodeCamp certification project, the goal was to build a tribute page for a subject of choice.",
+    "image": "/images/Tributepage.png",
+    "liveUrl": "https://lfourage.github.io/fcc-tributepage/",
+    "githubUrl": "https://github.com/lfourage/fcc-tributepage",
+    "tags": ["HTML", "CSS"]
+  },
+  {
+    "id": 3,
+    "name": "ft_container",
+    "description": "A 42 School project, the goal was to reimplement the C++ STL containers.",
+    "image": "/images/container.png",
+    "liveUrl": null,
+    "githubUrl": "https://github.com/lfourage/ft_container",
+    "tags": ["C++"]
+  },
+  {
+    "id": 4,
+    "name": "Philosophers",
+    "description": "A 42 School project, the goal was to learn threads in C.",
+    "image": "/images/philosopher.png",
+    "liveUrl": null,
+    "githubUrl": "https://github.com/lfourage/Philosophers",
+    "tags": ["C"]
+  }
+]
